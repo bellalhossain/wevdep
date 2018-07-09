@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="row">
+    <h1>{{ title }}</h1>
+    <div class="col-sx-6 col-md-6 col-lg-6">
+        {% if confirm_message %}
+        <p>{{ confirm_message }}</p>
+        {% endif %}
+        {% if form %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input id="Contact" type="text" name="name_field" email="email_field" message="message_field">
+                <input type="submit" value="submit form" class="btn btn-default">
+            </form>
+        {% endif %}
+    </div>
+    <div class="col-sx-6 col-md-6 col-lg-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0975359033587!2d37.00831931420143!3d-1.089106399205563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f46276c2d9021%3A0xbefd8e40071d3352!2sJomo+Kenyatta+University+of+Agriculture+and+Technology!5e0!3m2!1sen!2ske!4v1496994589652" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    </div>
+{% endblock %}
